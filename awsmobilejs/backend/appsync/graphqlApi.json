@@ -1,0 +1,14 @@
+{
+    "name": "SmartHouse",
+    "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+    "logConfig": {
+        "fieldLogLevel": "ALL",
+        "cloudWatchLogsRoleArn": "arn:aws:iam::562849865336:role/service-role/appsync-graphqlapi-logs-ap-northeast-1"
+    },
+    "userPoolConfig": {
+        "userPoolId": "ap-northeast-1_YLtRJHIsC",
+        "awsRegion": "ap-northeast-1",
+        "defaultAction": "ALLOW",
+        "appIdClientRegex": null
+    }
+}

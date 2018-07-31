@@ -1,0 +1,13 @@
+#**
+    Resolvers with None data sources can locally publish events
+    that fire subscriptions without hitting a backend data source.
+    The value of 'payload' after the template has been evaluated
+    will be directly forwarded to the response.
+*#
+
+{
+    "version": "2017-02-28",
+    "payload": {
+        "body": $util.toJson($ctx.args)
+    }
+}

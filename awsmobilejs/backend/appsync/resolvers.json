@@ -1,0 +1,23 @@
+[
+    {
+        "typeName": "Mutation",
+        "fieldName": "addMessage",
+        "dataSourceName": "DynamoDB_AddMessage",
+        "requestMappingTemplate": "{managed-by-awsmobile-cli}:Mutation.addMessage.request",
+        "responseMappingTemplate": "{managed-by-awsmobile-cli}:Mutation.addMessage.response"
+    },
+    {
+        "typeName": "Mutation",
+        "fieldName": "addTextMessage",
+        "dataSourceName": "Text_Transfer",
+        "requestMappingTemplate": "{managed-by-awsmobile-cli}:Mutation.addTextMessage.request",
+        "responseMappingTemplate": "{managed-by-awsmobile-cli}:Mutation.addTextMessage.response"
+    },
+    {
+        "typeName": "RaspberryPi",
+        "fieldName": "signedURL",
+        "dataSourceName": "GetPreSignedURL",
+        "requestMappingTemplate": "{managed-by-awsmobile-cli}:RaspberryPi.signedURL.request",
+        "responseMappingTemplate": "{managed-by-awsmobile-cli}:RaspberryPi.signedURL.response"
+    }
+]

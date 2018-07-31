@@ -1,0 +1,60 @@
+{
+    "dataSources": [
+        {
+            "name": "DynamoDB_AddMessage",
+            "description": "Data source created by the console.",
+            "type": "AMAZON_DYNAMODB",
+            "serviceRoleArn": "{managed-by-awsmobile-cli}",
+            "dynamodbConfig": {
+                "tableName": "AppSyncMessages",
+                "awsRegion": "ap-northeast-1",
+                "useCallerCredentials": false
+            }
+        },
+        {
+            "name": "GetPreSignedURL",
+            "description": "Data source created by the console.",
+            "type": "AWS_LAMBDA",
+            "serviceRoleArn": "{managed-by-awsmobile-cli}",
+            "lambdaConfig": {
+                "lambdaFunctionArn": "arn:aws:lambda:ap-northeast-1:562849865336:function:Lambdb-GetPreSignedURL"
+            }
+        },
+        {
+            "name": "Text_Transfer",
+            "description": "Data source created by the console.",
+            "type": "NONE",
+            "serviceRoleArn": "{managed-by-awsmobile-cli}"
+        }
+    ],
+    "tables": [
+        {
+            "AttributeDefinitions": [
+                {
+                    "AttributeName": "id",
+                    "AttributeType": "S"
+                },
+                {
+                    "AttributeName": "timestamp",
+                    "AttributeType": "S"
+                }
+            ],
+            "TableName": "AppSyncMessages",
+            "KeySchema": [
+                {
+                    "AttributeName": "id",
+                    "KeyType": "HASH"
+                },
+                {
+                    "AttributeName": "timestamp",
+                    "KeyType": "RANGE"
+                }
+            ],
+            "ProvisionedThroughput": {
+                "ReadCapacityUnits": 5,
+                "WriteCapacityUnits": 1
+            },
+            "Region": "ap-northeast-1"
+        }
+    ]
+}
