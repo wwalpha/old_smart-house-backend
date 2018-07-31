@@ -1,9 +1,17 @@
 {
   "yaml.schemas": {
-    "http://xxxxx.xxxx/raw/master/sam.schema.json": [
+    "https://raw.githubusercontent.com/wwalpha/memo/master/yaml/sam.schema.json": [
       "sam.yaml",
       "sam.yml"
     ]
   },
-  "yaml.validate": false
+  "yaml.validate": false,
+  "files.exclude": {
+    "**/.gitignore": true,
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true
+  }
 }

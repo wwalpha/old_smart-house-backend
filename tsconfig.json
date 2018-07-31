@@ -1,20 +1,22 @@
 {
   "compilerOptions": {
     "rootDir": "./lambda",
-    "target": "es2015",
+    "target": "es5",
     "module": "commonjs",
     "moduleResolution": "node",
     "sourceMap": false,
     "noImplicitAny": true,
     "lib": [
       "es5",
+      "es2015",
       "es6",
       "es2015.promise",
       "dom"
     ],
+    "outDir": "./dist",
     "baseUrl": ".",
     "removeComments": true,
-    "allowJs": true,
+    "allowJs": false,
     "strictNullChecks": true,
     "allowUnreachableCode": false,
     "allowUnusedLabels": false
@@ -23,7 +25,6 @@
   "exclude": [
     "node_modules",
     "awsmobilejs",
-    "**/*.js",
     "**/*.spec.ts"
   ]
 }

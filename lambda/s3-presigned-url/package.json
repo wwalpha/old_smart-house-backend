@@ -1,0 +1,19 @@
+{
+  "name": "s3-pre-signed-xxx",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsc -w app.ts",
+    "build": "tsc app.ts --outDir dist --target ES5 --lib es2015 -m commonjs",
+    "invoke": "sam local invoke -d 5858 <function logical id>",
+    "api": "sam local start-api -d 5858",
+    "validate": "sam validate -t template.sam.yml",
+    "package": "sam package --template-file template.sam.yml --s3-bucket smarthouse-deployments-mobilehub-467026891 --output-template-file packaged.yml",
+    "deploy": "sam deploy --template-file ./packaged.yml --stack-name SmartHouse-AppSync --capabilities CAPABILITY_IAM",
+    "release": "yarn build && yarn validate && yarn package && yarn deploy",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
