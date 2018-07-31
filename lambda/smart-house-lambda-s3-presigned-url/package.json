@@ -1,0 +1,18 @@
+{
+  "name": "s3-pre-signed-xxx",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsc -w app.ts",
+    "build": "tsc app.ts",
+    "invoke": "sam local invoke -d 5858 <function logical id>",
+    "api": "sam local start-api -d 5858",
+    "package": "sam package --template-file template.yml --s3-bucket locally-lambda-deploy --output-template-file packaged.yml",
+    "deploy": "sam deploy --template-file ./packaged.yml --stack-name project-name-Lambdb --capabilities CAPABILITY_IAM",
+    "release": "yarn build && yarn package && yarn deploy",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
