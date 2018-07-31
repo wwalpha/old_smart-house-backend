@@ -1,0 +1,16 @@
+--- !com.amazonaws.mobilehub.v0.Project 
+features:
+  sign-in: !com.amazonaws.mobilehub.v0.SignIn 
+    attributes:
+      enabled: true
+      optional-sign-in: true
+    components:
+      sign-in-user-pools: !com.amazonaws.mobilehub.v0.UserPoolsIdentityProvider 
+        attributes:
+          user-pool-id: ap-northeast-1_YLtRJHIsC
+  user-files: !com.amazonaws.mobilehub.v0.UserFiles 
+    attributes:
+      enabled: true
+      wildcard-cors-policy: true
+name: SmartHouse
+region: ap-northeast-1
